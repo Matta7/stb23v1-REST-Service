@@ -1,10 +1,19 @@
 package fr.univrouen.stb23v1.controllers;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-@RestController
+@Controller
 public class IndexController {
-    @GetMapping("/")
-    public String index() {
-        return "Hello stb23 !";
+    @RequestMapping(value = { "/" }, method = RequestMethod.GET)
+    public String index(Model model) {
+        return "index";
+    }
+
+    @RequestMapping(value = {"/help" }, method = RequestMethod.GET)
+    public String help(Model model) {
+        return "pages/help/help";
     }
 }
