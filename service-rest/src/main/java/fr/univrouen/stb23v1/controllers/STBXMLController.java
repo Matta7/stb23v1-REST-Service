@@ -1,26 +1,32 @@
 package fr.univrouen.stb23v1.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import fr.univrouen.stb23v1.services.STBXMLService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
+@RestController
 public class STBXMLController {
 
-    /**
-     * List ...
-     * @return
-     */
-    @GetMapping("/stb23/resume/xml")
+    @Autowired
+    private STBXMLService stbxmlService;
+
+    @RequestMapping(
+            value = {"/stb23/resume/xml"},
+            produces = MediaType.APPLICATION_XML_VALUE,
+            method = RequestMethod.GET
+    )
     public String list() {
-        return "Envoi de la liste des STB";
+        return stbxmlService.getList();
     }
 
-    /**
-     * Get ...
-     * @param id
-     * @return
-     */
-    @GetMapping("/stb23/xml/{id}")
+
+    @RequestMapping(
+            value = {"/stb23/xml/{id}"},
+            produces = MediaType.APPLICATION_XML_VALUE,
+            method = RequestMethod.GET
+    )
     public String get(@PathVariable String id) {
-        return ("Détail de la STB n°" + id);
+        return stbxmlService.getById(id);
     }
 }
