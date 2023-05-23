@@ -1,0 +1,7 @@
+fr\univrouen\stb23v1\controllers\STBXMLController.class
+fr\univrouen\stb23v1\model\STB.class
+fr\univrouen\stb23v1\controllers\IndexController.class
+fr\univrouen\stb23v1\model\TestSTB.class
+fr\univrouen\stb23v1\ServletInitializer.class
+fr\univrouen\stb23v1\Stb23v1Application.class
+fr\univrouen\stb23v1\controllers\STBHTMLController.class
