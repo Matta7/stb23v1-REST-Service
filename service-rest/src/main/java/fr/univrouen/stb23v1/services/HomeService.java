@@ -1,4 +1,4 @@
-package fr.univrouen.stb23v1.model.services;
+package fr.univrouen.stb23v1.services;
 
 import org.springframework.stereotype.Service;
 
