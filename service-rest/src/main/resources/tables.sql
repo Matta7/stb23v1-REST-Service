@@ -1,23 +1,11 @@
 -- Création de la table STB (Software Technical Brief)
-CREATE TABLE STB (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    titre VARCHAR(255),
-    version DECIMAL(10, 2),
-    date DATE,
-    description TEXT,
-    client_id INT,
-    equipe_id INT,
-    FOREIGN KEY (client_id) REFERENCES Client(id),
-    FOREIGN KEY (equipe_id) REFERENCES Equipe(id)
-);
-
 -- Création de la table Client
 CREATE TABLE Client (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    entite VARCHAR(255),
-    nom VARCHAR(255),
-    genre VARCHAR(255),
-    prenom VARCHAR(255),
+    entite VARCHAR(100),
+    nom VARCHAR(100),
+    genre VARCHAR(100),
+    prenom VARCHAR(100),
     CONSTRAINT unique_client UNIQUE (entite, nom, genre, prenom)
 );
 
@@ -40,8 +28,19 @@ CREATE TABLE Telephone (
 -- Création de la table Equipe
 CREATE TABLE Equipe (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(255),
-    CONSTRAINT check_membres_count CHECK (membres_count BETWEEN 2 AND 8)
+    nom VARCHAR(255)
+);
+
+CREATE TABLE STB (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titre VARCHAR(255),
+    version DECIMAL(10, 2),
+    date DATE,
+    description TEXT,
+    client_id INT,
+    equipe_id INT,
+    FOREIGN KEY (client_id) REFERENCES Client(id),
+    FOREIGN KEY (equipe_id) REFERENCES Equipe(id)
 );
 
 -- Création de la table Membre

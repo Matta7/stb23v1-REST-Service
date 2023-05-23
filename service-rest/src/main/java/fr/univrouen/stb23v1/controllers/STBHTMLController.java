@@ -11,7 +11,8 @@ public class STBHTMLController {
      */
     @GetMapping("/stb23/resume")
     public String list() {
-        return "Envoi de la liste des STB";
+        //On cherche à récupérer la liste des STB depuis la base de données locale
+        return ("Liste des STB");
     }
 
     /**
@@ -26,6 +27,8 @@ public class STBHTMLController {
 
     @PostMapping(value = "/stb23/insert", produces = MediaType.APPLICATION_XML_VALUE)
     public String insert(@RequestBody String flux) {
+        //On récupère et on décode le flux XML
+        
         return flux;
     }
 
