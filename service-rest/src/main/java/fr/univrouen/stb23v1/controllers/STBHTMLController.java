@@ -20,7 +20,7 @@ public class STBHTMLController {
      * @param id
      * @return
      */
-    @GetMapping("/stb23/html/{id}")
+    @RequestMapping("/stb23/html/{id}")
     public String get(@PathVariable String id) {
         return ("Détail de la STB n°" + id);
     }

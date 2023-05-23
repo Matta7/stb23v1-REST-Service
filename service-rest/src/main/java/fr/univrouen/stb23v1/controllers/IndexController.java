@@ -1,19 +1,34 @@
 package fr.univrouen.stb23v1.controllers;
+import fr.univrouen.stb23v1.model.services.HomeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 @RestController
 public class IndexController {
-    @RequestMapping(value = { "/" }, method = RequestMethod.GET)
-    public String index(Model model) {
-        return "index";
+
+    @Autowired
+    private HomeService homeService;
+
+    @RequestMapping(
+            value = { "/" },
+            method = RequestMethod.GET
+            //produces = "application/html"
+    )
+    @ResponseBody
+    public String index() {
+        return homeService.getHTMLHomePage();
     }
 
-    @RequestMapping(value = {"/help" }, method = RequestMethod.GET)
-    public String help(Model model) {
-        return "pages/help/help";
+    @RequestMapping(
+            value = {"/help" },
+            method = RequestMethod.GET
+            //produces = "application/html"
+    )
+    @ResponseBody
+    public String help() {
+        return homeService.getHTMLHelpPage();
     }
 }
