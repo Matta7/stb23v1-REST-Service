@@ -16,6 +16,7 @@ public class STBController {
 
     @RequestMapping(
             value = {"stb23/insert"},
+            consumes = MediaType.APPLICATION_XML_VALUE,
             produces = MediaType.APPLICATION_XML_VALUE,
             method = RequestMethod.POST
     )

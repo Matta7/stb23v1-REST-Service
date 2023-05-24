@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class STBService {
 
     public String insert() {
-        return "";
+        
     }
 
     public String delete(String id) {
