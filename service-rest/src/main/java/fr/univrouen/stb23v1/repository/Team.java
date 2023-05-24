@@ -4,6 +4,7 @@ import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
 
 @XmlRootElement(name = "team")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Team {
   @XmlElement(name = "member")
   private ArrayList<Member> members;

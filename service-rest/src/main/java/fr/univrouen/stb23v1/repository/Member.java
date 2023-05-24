@@ -3,6 +3,8 @@ package fr.univrouen.stb23v1.repository;
 import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
 
+@XmlRootElement(name = "member")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Member {
   @XmlElement(name = "person")
   private Person person;

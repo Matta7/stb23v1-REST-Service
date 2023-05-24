@@ -4,6 +4,7 @@ import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
 
 @XmlRootElement(name = "client")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Client {
   @XmlElement(name = "entity")
   private String entity;

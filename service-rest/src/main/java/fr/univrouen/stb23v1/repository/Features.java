@@ -4,6 +4,7 @@ import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
 
 @XmlRootElement(name = "features")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Features {
     @XmlElement(name = "feature")
     private ArrayList<Feature> features;

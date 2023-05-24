@@ -3,6 +3,7 @@ package fr.univrouen.stb23v1.repository;
 import jakarta.xml.bind.annotation.*;
 
 @XmlRootElement(name = "person")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Person {
   @XmlAttribute(name = "gender")
   private String gender;

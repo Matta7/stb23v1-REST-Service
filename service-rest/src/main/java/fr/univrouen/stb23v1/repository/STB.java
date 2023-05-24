@@ -3,6 +3,7 @@ package fr.univrouen.stb23v1.repository;
 import jakarta.xml.bind.annotation.*;
 
 @XmlRootElement(name = "stb")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class STB {
     @XmlElement
     private String title;
