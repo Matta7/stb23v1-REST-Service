@@ -20,7 +20,6 @@ public class STBXMLController {
         return stbxmlService.getList();
     }
 
-
     @RequestMapping(
             value = {"/stb23/xml/{id}"},
             produces = MediaType.APPLICATION_XML_VALUE,
