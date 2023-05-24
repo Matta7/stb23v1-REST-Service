@@ -27,4 +27,5 @@ public class IndexController {
     public String help() {
         return homeService.getHTMLHelpPage();
     }
+
 }
