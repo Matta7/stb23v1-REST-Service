@@ -30,17 +30,17 @@ public class STB {
     private String description;
 
     @XmlElement
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "client_id")
     private Client client;
 
     @XmlElement
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "team_id")
     private Team team;
 
     @XmlElement(name = "features")
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "feature_id")
     private Features featureList;
 

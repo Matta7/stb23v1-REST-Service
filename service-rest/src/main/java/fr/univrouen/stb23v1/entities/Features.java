@@ -21,60 +21,60 @@ public class Features {
 
 
     @XmlElement(name = "feature")
-    @OneToMany
-    private List<Feature> features;
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Feature> feature;
 
     // Getters and setters
-    public List<Feature> getFeatures() {
-        return features;
+    public List<Feature> getFeature() {
+        return feature;
     }
 
-    public void setFeatures(List<Feature> features) {
-        this.features = features;
+    public void setFeature(List<Feature> feature) {
+        this.feature = feature;
     }
 
     // Constructors
     public Features() {
-        this.features = new ArrayList<Feature>();
+        this.feature = new ArrayList<Feature>();
     }
 
-    public Features(ArrayList<Feature> features) {
-        this.features = features;
+    public Features(ArrayList<Feature> feature) {
+        this.feature = feature;
     }
 
     // Methods
     public void addFeature(Feature feature) {
-        this.features.add(feature);
+        this.feature.add(feature);
     }
 
     public void removeFeature(Feature feature) {
-        this.features.remove(feature);
+        this.feature.remove(feature);
     }
 
     public Feature getFeature(int index) {
-        return this.features.get(index);
+        return this.feature.get(index);
     }
 
     public int size() {
-        return this.features.size();
+        return this.feature.size();
     }
 
     public boolean isEmpty() {
-        return this.features.isEmpty();
+        return this.feature.isEmpty();
     }
 
     public boolean contains(Feature feature) {
-        return this.features.contains(feature);
+        return this.feature.contains(feature);
     }
 
     public void clear() {
-        this.features.clear();
+        this.feature.clear();
     }
 
     // Methods
     public String toString() {
         String str = "Features{\n";
-        for (Feature feature : this.features) {
+        for (Feature feature : this.feature) {
             str += feature.toString() + "\n";
         }
         str += "}";

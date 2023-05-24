@@ -17,7 +17,7 @@ public class Person {
   @XmlTransient
   private Integer id;
 
-  @XmlElement(name = "person")
+  @XmlValue
   private String firstname;
 
   @XmlAttribute(name = "gender")
