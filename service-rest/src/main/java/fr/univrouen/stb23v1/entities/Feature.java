@@ -1,8 +1,8 @@
-package fr.univrouen.stb23v1.repository;
+package fr.univrouen.stb23v1.entities;
 
 import jakarta.xml.bind.annotation.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "feature")
@@ -22,7 +22,7 @@ public class Feature {
   private String description;
 
   @XmlElement(name = "priority")
-  private int priority;
+  private Integer priority;
 
   @XmlElement(name = "delivery")
   private String delivery;
@@ -34,10 +34,10 @@ public class Feature {
   private String name;
   
   @XmlAttribute(name = "section")
-  private int section;
+  private Integer section;
   
   @XmlAttribute(name = "number")
-  private int number;
+  private Integer number;
 
   // Getters and setters
 
@@ -71,6 +71,30 @@ public class Feature {
 
   public void setComment(String comment) {
     this.comment = comment;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getSection() {
+    return section;
+  }
+
+  public void setSection(int section) {
+    this.section = section;
+  }
+
+  public int getNumber() {
+    return number;
+  }
+
+  public void setNumber(int number) {
+    this.number = number;
   }
 
   //Constructors

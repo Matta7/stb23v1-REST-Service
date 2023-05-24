@@ -1,6 +1,6 @@
 package fr.univrouen.stb23v1.controllers;
 
-import fr.univrouen.stb23v1.repository.STB;
+import fr.univrouen.stb23v1.entities.STB;
 import fr.univrouen.stb23v1.services.STBXMLService;
 import fr.univrouen.stb23v1.utils.MarshalMethods;
 import org.springframework.beans.factory.annotation.Autowired;

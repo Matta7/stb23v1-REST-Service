@@ -1,5 +1,6 @@
 package fr.univrouen.stb23v1.utils;
 
+import fr.univrouen.stb23v1.entities.STB;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
@@ -12,13 +13,13 @@ import java.io.IOException;
 
 public class MarshalMethods {
     
-    public static fr.univrouen.stb23v1.repository.STB deserializeXml() {
+    public static STB deserializeXml() {
         try {
             Resource resource = new DefaultResourceLoader().getResource("classpath:/xml/stb23.tp1.xsd.xml");
 
-            JAXBContext jaxbContext = JAXBContext.newInstance(fr.univrouen.stb23v1.repository.STB.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(STB.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            fr.univrouen.stb23v1.repository.STB stb = (fr.univrouen.stb23v1.repository.STB) unmarshaller.unmarshal(resource.getFile());
+            STB stb = (STB) unmarshaller.unmarshal(resource.getFile());
             Resource resource2 = new DefaultResourceLoader().getResource("classpath:/xml/test0.xml");
             serializeXml(stb, resource2.getFile());
 
@@ -31,9 +32,9 @@ public class MarshalMethods {
         }
     }
 
-    public static void serializeXml(fr.univrouen.stb23v1.repository.STB stb, File file) {
+    public static void serializeXml(STB stb, File file) {
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance( fr.univrouen.stb23v1.repository.STB.class );
+            JAXBContext jaxbContext = JAXBContext.newInstance( STB.class );
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_ENCODING, "UTF-8");
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);

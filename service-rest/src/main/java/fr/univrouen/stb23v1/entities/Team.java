@@ -1,9 +1,10 @@
-package fr.univrouen.stb23v1.repository;
+package fr.univrouen.stb23v1.entities;
 
 import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "team")
@@ -21,14 +22,14 @@ public class Team {
   @XmlElement(name = "member")
   @OneToMany(cascade = CascadeType.ALL)
   @JoinColumn(name = "member_id")
-  private ArrayList<Member> members;
+  private List<Member> members;
 
   // Getters and setters
-  public ArrayList<Member> getMembers() {
+  public List<Member> getMembers() {
     return members;
   }
 
-  public void setMembers(ArrayList<Member> members) {
+  public void setMembers(List<Member> members) {
     this.members = members;
   }
 
@@ -37,7 +38,7 @@ public class Team {
     this.members = new ArrayList<Member>();
   }
 
-  public Team(ArrayList<Member> members) {
+  public Team(List<Member> members) {
     this.members = members;
   }
 

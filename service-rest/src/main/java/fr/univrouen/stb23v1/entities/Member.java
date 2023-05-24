@@ -1,9 +1,10 @@
-package fr.univrouen.stb23v1.repository;
+package fr.univrouen.stb23v1.entities;
 
 import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "member")
@@ -27,7 +28,8 @@ public class Member {
   private String mail;
 
   @XmlElement(name = "function")
-  private ArrayList<String> functions;
+  @ElementCollection
+  private List<String> functions;
 
   // Getters and setters
 
@@ -47,7 +49,7 @@ public class Member {
     this.mail = mail;
   }
 
-  public ArrayList<String> getFunctions() {
+  public List<String> getFunctions() {
     return functions;
   }
 

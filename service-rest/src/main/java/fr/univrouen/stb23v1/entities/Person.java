@@ -1,8 +1,8 @@
-package fr.univrouen.stb23v1.repository;
+package fr.univrouen.stb23v1.entities;
 
 import jakarta.xml.bind.annotation.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "person")

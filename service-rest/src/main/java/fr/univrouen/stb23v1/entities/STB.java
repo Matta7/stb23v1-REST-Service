@@ -1,8 +1,7 @@
-package fr.univrouen.stb23v1.repository;
+package fr.univrouen.stb23v1.entities;
 
+import jakarta.persistence.*;
 import jakarta.xml.bind.annotation.*;
-
-import javax.persistence.*;
 
 @Entity
 @Table(name = "stb")
@@ -31,6 +30,8 @@ public class STB {
     private String description;
 
     @XmlElement
+    @OneToOne
+    @JoinColumn(name = "client_id")
     private Client client;
 
     @XmlElement

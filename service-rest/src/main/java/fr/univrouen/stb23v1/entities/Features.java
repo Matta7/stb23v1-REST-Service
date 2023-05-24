@@ -1,9 +1,10 @@
-package fr.univrouen.stb23v1.repository;
+package fr.univrouen.stb23v1.entities;
 
 import jakarta.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "features")
@@ -18,15 +19,17 @@ public class Features {
     @XmlTransient
     private Integer id;
 
+
     @XmlElement(name = "feature")
-    private ArrayList<Feature> features;
+    @OneToMany
+    private List<Feature> features;
 
     // Getters and setters
-    public ArrayList<Feature> getFeatures() {
+    public List<Feature> getFeatures() {
         return features;
     }
 
-    public void setFeatures(ArrayList<Feature> features) {
+    public void setFeatures(List<Feature> features) {
         this.features = features;
     }
 

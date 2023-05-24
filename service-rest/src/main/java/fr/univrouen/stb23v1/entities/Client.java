@@ -1,9 +1,11 @@
-package fr.univrouen.stb23v1.repository;
+package fr.univrouen.stb23v1.entities;
 
 import jakarta.xml.bind.annotation.*;
-import java.util.ArrayList;
 
-import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "client")
@@ -28,10 +30,16 @@ public class Client {
   private Person person;
 
   @XmlElement(name = "mail")
-  private ArrayList<String> mail;
+  @ElementCollection
+  @CollectionTable(name = "client_mails", joinColumns = @JoinColumn(name = "client_id"))
+  @Column(name = "mail")
+  private List<String> mail;
 
   @XmlElement(name = "tel")
-  private ArrayList<String> tel;
+  @ElementCollection
+  @CollectionTable(name = "client_tel", joinColumns = @JoinColumn(name = "client_id"))
+  @Column(name = "tel")
+  private List<String> tel;
 
   // Getters and setters
 
@@ -51,19 +59,19 @@ public class Client {
     this.person = person;
   }
 
-  public ArrayList<String> getMail() {
+  public List<String> getMail() {
     return mail;
   }
 
-  public void setMail(ArrayList<String> mail) {
+  public void setMail(List<String> mail) {
     this.mail = mail;
   }
 
-  public ArrayList<String> getTel() {
+  public List<String> getTel() {
     return tel;
   }
 
-  public void setTel(ArrayList<String> tel) {
+  public void setTel(List<String> tel) {
     this.tel = tel;
   }
 
