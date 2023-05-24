@@ -17,6 +17,13 @@ CREATE TABLE Email (
     FOREIGN KEY (client_id) REFERENCES Client(id)
 );
 
+CREATE TABLE Tel (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    client_id INT,
+    tel VARCHAR(255),
+    FOREIGN KEY (client_id) REFERENCES Client(id)
+);
+
 -- Création de la table Telephone (pour stocker les numéros de téléphone)
 CREATE TABLE Telephone (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -35,7 +42,7 @@ CREATE TABLE STB (
     id INT PRIMARY KEY AUTO_INCREMENT,
     titre VARCHAR(255),
     version DECIMAL(10, 2),
-    date DATE,
+    date VARCHAR(255),
     description TEXT,
     client_id INT,
     equipe_id INT,
@@ -50,8 +57,15 @@ CREATE TABLE Membre (
     nom VARCHAR(255),
     genre VARCHAR(255),
     prenom VARCHAR(255),
-    fonction VARCHAR(255),
     FOREIGN KEY (equipe_id) REFERENCES Equipe(id)
+);
+
+-- Création de la table Function
+CREATE TABLE Fonction (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    member_id INT,
+    description VARCHAR(255),
+    CONSTRAINT fk_member_id FOREIGN KEY (member_id) REFERENCES Membre (id)
 );
 
 -- Création de la table FeatureList (liste des fonctionnalités)
