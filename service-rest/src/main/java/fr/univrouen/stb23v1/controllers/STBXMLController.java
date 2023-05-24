@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-
 @RestController
 public class STBXMLController {
 
@@ -32,14 +30,5 @@ public class STBXMLController {
     )
     public STB get(@PathVariable String id) {
         return stbxmlService.getById(id);
-    }
-
-    @RequestMapping(
-            value = {"/stb23/xml/test"},
-            //produces = MediaType.APPLICATION_XML_VALUE,
-            method = RequestMethod.GET
-    )
-    public String test() throws IOException {
-        return stbxmlService.save();
     }
 }

@@ -22,12 +22,9 @@ public class STBXMLService {
     public STBs getList() {
         Iterable<STB> stbList = stbRepository.findAll();
         STBs stbs = new STBs();
-        /*StringBuilder stbs = new StringBuilder("<stbs>\n");
         for(STB stb : stbList) {
-            stbs.append(MarshalMethods.serializeXml(stb))
-                    .append("\n");
+            stbs.addSTB(stb);
         }
-        stbs.append("</stbs>");*/
         return stbs;
     }
 
