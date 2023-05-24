@@ -2,10 +2,10 @@ package fr.univrouen.stb23v1.repository;
 
 import jakarta.xml.bind.annotation.*;
 
-@XmlRootElement(name = "stb")
+@XmlRootElement(name = "stb", namespace = "http://univrouen.fr/stb23")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class STB {
-    @XmlElement
+    @XmlElement()
     private String title;
 
     @XmlElement

@@ -1,6 +1,8 @@
 package fr.univrouen.stb23v1.controllers;
 
+import fr.univrouen.stb23v1.repository.STB;
 import fr.univrouen.stb23v1.services.STBXMLService;
+import fr.univrouen.stb23v1.utils.MarshalMethods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +36,7 @@ public class STBXMLController {
             produces = MediaType.APPLICATION_XML_VALUE,
             method = RequestMethod.GET
     )
-    public String test() {
-        return stbxmlService.deserializeXml();
+    public STB test() {
+        return MarshalMethods.deserializeXml();
     }
 }
