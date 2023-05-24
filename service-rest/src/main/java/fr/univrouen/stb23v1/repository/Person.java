@@ -5,6 +5,9 @@ import jakarta.xml.bind.annotation.*;
 @XmlRootElement(name = "person")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Person {
+  @XmlElement(name = "person")
+  private String firstname;
+
   @XmlAttribute(name = "gender")
   private String gender;
 
@@ -12,6 +15,14 @@ public class Person {
   private String lastname;
 
   // Getters and setters
+  public String getFirstname() {
+    return firstname;
+  }
+
+  public void setFirstname(String firstname) {
+    this.firstname = firstname;
+  }
+
   public String getGender() {
     return gender;
   }
@@ -41,6 +52,11 @@ public class Person {
   // Methods
   @Override
   public String toString() {
-    return "Person";
+    String str = "Person{\n";
+    str += "person=" + lastname + "\n";
+    str += "lastname=" + firstname + "\n";
+    str += "gender=" + gender + "\n";
+    str += "}";
+    return str;
   }
 }
