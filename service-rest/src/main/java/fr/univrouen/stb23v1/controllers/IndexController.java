@@ -1,7 +1,6 @@
 package fr.univrouen.stb23v1.controllers;
 import fr.univrouen.stb23v1.services.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,10 +1,14 @@
+package fr.univrouen.stb23v1;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import javax.sql.DataSource;
+
 @Configuration
-public class DatabaseConfig {
+public class DatabaseConfiguration {
 
     @Autowired
     private org.springframework.core.env.Environment env;

@@ -28,4 +28,13 @@ public class STBXMLController {
     public String get(@PathVariable String id) {
         return stbxmlService.getById(id);
     }
+
+    @RequestMapping(
+            value = {"/stb23/xml/test"},
+            produces = MediaType.APPLICATION_XML_VALUE,
+            method = RequestMethod.GET
+    )
+    public String test() {
+        return stbxmlService.deserializeXml();
+    }
 }
