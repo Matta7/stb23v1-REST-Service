@@ -25,7 +25,7 @@ public class STBService {
         Iterable<STB> stbList = stbRepository.findAll();
         for (STB stbInList : stbList) {
             if (stbInList.getTitle().equals(stb.getTitle()) 
-            && stbInList.getVersion().equals(stb.getVersion()) 
+            && stbInList.getVersion() == stb.getVersion()
             && stbInList.getDate().equals(stb.getDate())) {
                 return StatusGenerator.generateStatusInsertXML("ERROR", "DUPLICATED");
             }
