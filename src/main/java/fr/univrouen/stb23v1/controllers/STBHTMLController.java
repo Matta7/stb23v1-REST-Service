@@ -1,36 +1,34 @@
 package fr.univrouen.stb23v1.controllers;
 
-import org.springframework.http.MediaType;
+import fr.univrouen.stb23v1.services.STBHTMLService;
+import jakarta.xml.bind.JAXBException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.transform.TransformerException;
+import java.io.IOException;
+
+@RestController
 public class STBHTMLController {
 
-    /**
-     * List ...
-     * @return
-     */
-    @GetMapping("/stb23/resume")
-    public String list() {
-        return "Envoi de la liste des STB";
+    @Autowired
+    private STBHTMLService stbhtmlService;
+
+    @RequestMapping(
+            value = {"/stb23/resume"},
+            //produces = ,
+            method = RequestMethod.GET
+    )
+    public String list() throws JAXBException, IOException, TransformerException {
+        return stbhtmlService.getList();
     }
 
-    /**
-     * Get ...
-     * @param id
-     * @return
-     */
-    @GetMapping("/stb23/html/{id}")
-    public String get(@PathVariable String id) {
-        return ("Détail de la STB n°" + id);
-    }
-
-    @PostMapping(value = "/stb23/insert", produces = MediaType.APPLICATION_XML_VALUE)
-    public String insert(@RequestBody String flux) {
-        return flux;
-    }
-
-    @DeleteMapping(value = "/stb23/delete/{id}")
-    public String delete(@PathVariable String id, @RequestBody String flux) {
-        return flux;
+    @RequestMapping(
+            value = {"/stb23/html/{id}"},
+            //produces = ,
+            method = RequestMethod.GET
+    )
+    public String get(@PathVariable String id) throws JAXBException, TransformerException, IOException {
+        return stbhtmlService.getById(id);
     }
 }
