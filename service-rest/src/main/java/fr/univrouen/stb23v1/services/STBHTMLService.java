@@ -1,5 +1,6 @@
 package fr.univrouen.stb23v1.services;
 
+import fr.univrouen.stb23v1.utils.StatusGenerator;
 import fr.univrouen.stb23v1.utils.XMLStylesheetManager;
 import jakarta.xml.bind.JAXBException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,11 @@ public class STBHTMLService {
         return XMLStylesheetManager.getStbResumeHtml(stbxmlService.getList());
     }
 
-    public String getById(String id) throws JAXBException, TransformerException, IOException {
-        return XMLStylesheetManager.getStbHtml(stbxmlService.getById(id));
+    public String getById(String id) {
+        try {
+            return XMLStylesheetManager.getStbHtml(stbxmlService.getById(id));
+        } catch (JAXBException | TransformerException | IOException e) {
+            return StatusGenerator.generateStatusXML(id, "ERROR");
+        }
     }
 }
