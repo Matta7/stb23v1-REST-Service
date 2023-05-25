@@ -22,11 +22,19 @@ public class STBService {
             return StatusGenerator.generateStatusInsertXML("ERROR", "INVALID");
         }
 
+        Iterable<STB> stbList = stbRepository.findAll();
+        for (STB stbInList : stbList) {
+            if (stbInList.getTitle().equals(stb.getTitle()) 
+            && stbInList.getVersion().equals(stb.getVersion()) 
+            && stbInList.getDate().equals(stb.getDate())) {
+                return StatusGenerator.generateStatusInsertXML("ERROR", "DUPLICATED");
+            }
+        }
 
         try {
             stbRepository.save(stb);
         } catch (Exception e) {
-            return StatusGenerator.generateStatusInsertXML("ERROR", "DUPLICATED");
+            return StatusGenerator.generateStatusInsertXML("ERROR", "INVALID");
         }
 
         return StatusGenerator.generateStatusXML(stb.getId().toString(), "INSERTED");
