@@ -1,7 +1,6 @@
 package fr.univrouen.stb23v1.controllers;
 
 import fr.univrouen.stb23v1.entities.STB;
-import fr.univrouen.stb23v1.entities.STBs;
 import fr.univrouen.stb23v1.services.STBXMLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -18,7 +17,7 @@ public class STBXMLController {
             produces = MediaType.APPLICATION_XML_VALUE,
             method = RequestMethod.GET
     )
-    public STBs list() {
+    public String list() {
         System.out.println(stbxmlService.getList());
         return stbxmlService.getList();
     }

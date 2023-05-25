@@ -3,10 +3,7 @@ package fr.univrouen.stb23v1.controllers;
 import fr.univrouen.stb23v1.services.STBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class STBController {
@@ -20,8 +17,8 @@ public class STBController {
             produces = MediaType.APPLICATION_XML_VALUE,
             method = RequestMethod.POST
     )
-    public String insert() {
-        return stbService.insert();
+    public String insert(@RequestBody String xml) {
+        return stbService.insert(xml);
     }
 
     @RequestMapping(

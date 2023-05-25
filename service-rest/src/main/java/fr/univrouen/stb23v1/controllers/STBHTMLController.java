@@ -1,8 +1,12 @@
 package fr.univrouen.stb23v1.controllers;
 
 import fr.univrouen.stb23v1.services.STBHTMLService;
+import jakarta.xml.bind.JAXBException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.xml.transform.TransformerException;
+import java.io.IOException;
 
 @RestController
 public class STBHTMLController {
@@ -15,7 +19,7 @@ public class STBHTMLController {
             //produces = ,
             method = RequestMethod.GET
     )
-    public String list() {
+    public String list() throws JAXBException, IOException, TransformerException {
         return stbhtmlService.getList();
     }
 
@@ -24,7 +28,7 @@ public class STBHTMLController {
             //produces = ,
             method = RequestMethod.GET
     )
-    public String get(@PathVariable String id) {
+    public String get(@PathVariable String id) throws JAXBException, TransformerException, IOException {
         return stbhtmlService.getById(id);
     }
 }

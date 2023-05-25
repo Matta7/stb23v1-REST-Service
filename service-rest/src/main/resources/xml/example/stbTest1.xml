@@ -1,0 +1,38 @@
+<stb:stb xmlns:stb="http://univrouen.fr/stb23">
+    <version>1000.00</version>
+    <title>Title ABC</title>
+    <date>2008-09-29T03:49:45</date>
+    <description>Description XYZ</description>
+    <client>
+        <entity>Client XYZ</entity>
+        <person gender="Mrs" lastname="Smith">Jane</person>
+        <mail>jane.smith@example.com</mail>
+        <tel>03 03 03 03 03</tel>
+    </client>
+    <team>
+        <member>
+            <person gender="Miss" lastname="Johnson">Emily</person>
+            <mail>emily.johnson@example.com</mail>
+            <function>Developer</function>
+        </member>
+        <member>
+            <person gender="Mr" lastname="Williams">John</person>
+            <mail>john.williams@example.com</mail>
+            <function>Tester</function>
+        </member>
+    </team>
+    <features>
+        <feature name="Feature 1" section="3" number="3">
+            <description>Description of Feature 1</description>
+            <priority>3</priority>
+            <delivery>2023-05-25T10:00:00</delivery>
+            <comment>Comment for Feature 1</comment>
+        </feature>
+        <feature name="Feature 2" section="1" number="0">
+            <description>Description of Feature 2</description>
+            <priority>1</priority>
+            <delivery>2023-05-25T11:00:00</delivery>
+            <comment>Comment for Feature 2</comment>
+        </feature>
+    </features>
+</stb:stb>

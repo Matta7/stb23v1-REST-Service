@@ -1,4 +1,4 @@
-package fr.univrouen.stb23v1.util;
+package fr.univrouen.stb23v1.utils;
 
 import org.springframework.core.io.Resource;
 import org.springframework.util.FileCopyUtils;
