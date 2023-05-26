@@ -19,6 +19,4 @@ public class ResourceReader {
             throw new UncheckedIOException(e);
         }
     }
-
-    // more utility methods
 }

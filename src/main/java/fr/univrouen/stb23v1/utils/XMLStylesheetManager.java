@@ -32,7 +32,6 @@ public class XMLStylesheetManager {
         StringWriter sw = new StringWriter();
         StreamResult result = new StreamResult(sw);
 
-
         // Transform
         transformer.transform(source, result);
 
