@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "3e5afade-3602-46cc-b5d9-c14e5f8629b1",
+		"name": "stb23_merre_vallee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25666578"
+	},
+	"item": [
+		{
+			"name": "1  - /",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 - /help",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/help",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"help"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3 - /stb23/insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<stb:stb xmlns:stb=\"http://univrouen.fr/stb23\">\r\n  <version>1000.00</version>\r\n  <title>string</title>\r\n\r\n  <date>2008-09-29T03:49:45</date>\r\n  <description>string</description>\r\n  <client>\r\n    <entity>string</entity>\r\n    <person gender=\"Mrs\" lastname=\"string\">string</person>\r\n    <!--You have a CHOICE of the next 2 items at this level-->\r\n    <!--Zero or more repetitions:-->\r\n    <mail>a.a@a.com</mail>\r\n    <!--Zero or more repetitions:-->\r\n    <tel>02 02 02 02 02</tel>\r\n  </client>\r\n  <team>\r\n    <!--2 to 8 repetitions:-->\r\n    <member>\r\n      <person gender=\"Miss\" lastname=\"string\">string</person>\r\n      <mail>a.a@a.com</mail>\r\n      <!--1 or more repetitions:-->\r\n      <function>string</function>\r\n    </member>\r\n    <member>\r\n      <person gender=\"Mr\" lastname=\"string\">string</person>\r\n      <mail>a.a@a.com</mail>\r\n      <!--1 or more repetitions:-->\r\n      <function>string</function>\r\n    </member>\r\n  </team>\r\n  <features>\r\n    <!--1 or more repetitions:-->\r\n    <feature name=\"string\" section=\"3\" number=\"3\">\r\n      <description>string</description>\r\n      <priority>3</priority>\r\n      <!--Optional:-->\r\n      <delivery>2006-08-19T19:27:14+02:00</delivery>\r\n      <!--Optional:-->\r\n      <comment>string</comment>\r\n    </feature>\r\n    <feature name=\"string2\" section=\"1\" number=\"0\">\r\n      <description>string</description>\r\n      <priority>1</priority>\r\n      <!--Optional:-->\r\n      <delivery>2006-08-19T19:27:14+02:00</delivery>\r\n      <!--Optional:-->\r\n      <comment>string</comment>\r\n    </feature>\r\n  </features>\r\n</stb:stb>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/stb23/insert",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4 - /stb23/insert (another)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<stb:stb xmlns:stb=\"http://univrouen.fr/stb23\">\r\n    <version>2.00</version>\r\n    <title>Projet Beta</title>\r\n    <date>2008-09-29T03:49:45</date>\r\n    <description>Description du projet Beta</description>\r\n    <client>\r\n        <entity>Entreprise ABC</entity>\r\n        <person gender=\"Mrs\" lastname=\"Smith\">Emily</person>\r\n        <mail>emily.smith@example.com</mail>\r\n        <mail>emily.smith@company.com</mail>\r\n        <tel>03 01 03 02 03</tel>\r\n        <tel>05 05 05 05 05</tel>\r\n    </client>\r\n    <team>\r\n        <member>\r\n            <person gender=\"Miss\" lastname=\"Martin\">Sophie</person>\r\n            <mail>sophie.martin@example.com</mail>\r\n            <function>Designer</function>\r\n        </member>\r\n        <member>\r\n            <person gender=\"Mr\" lastname=\"Lefebvre\">Pierre</person>\r\n            <mail>pierre.lefebvre@example.com</mail>\r\n            <function>Developer</function>\r\n        </member>\r\n        <member>\r\n            <person gender=\"Mrs\" lastname=\"Gagnon\">Isabelle</person>\r\n            <mail>isabelle.gagnon@example.com</mail>\r\n            <function>Tester</function>\r\n        </member>\r\n    </team>\r\n    <features>\r\n        <feature name=\"Fonctionnalité 1\" section=\"1\" number=\"1\">\r\n            <description>Description de la fonctionnalité 1</description>\r\n            <priority>1</priority>\r\n            <delivery>2023-06-01T09:00:00</delivery>\r\n            <comment>Commentaire pour la fonctionnalité 1</comment>\r\n        </feature>\r\n        <feature name=\"Fonctionnalité 2\" section=\"2\" number=\"3\">\r\n            <description>Description de la fonctionnalité 2</description>\r\n            <priority>2</priority>\r\n            <delivery>2023-06-03T14:30:00</delivery>\r\n            <comment>Commentaire pour la fonctionnalité 2</comment>\r\n        </feature>\r\n        <feature name=\"Fonctionnalité 3\" section=\"3\" number=\"2\">\r\n            <description>Description de la fonctionnalité 3</description>\r\n            <priority>3</priority>\r\n            <delivery>2023-06-05T11:45:00</delivery>\r\n            <comment>Commentaire pour la fonctionnalité 3</comment>\r\n        </feature>\r\n    </features>\r\n</stb:stb>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/stb23/insert",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5 - /stb23/insert (should return duplicate error)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<stb:stb xmlns:stb=\"http://univrouen.fr/stb23\">\r\n    <version>2.00</version>\r\n    <title>Projet Beta</title>\r\n    <date>2008-09-29T03:49:45</date>\r\n    <description>Description du projet Beta</description>\r\n    <client>\r\n        <entity>Entreprise ABC</entity>\r\n        <person gender=\"Mrs\" lastname=\"Smith\">Emily</person>\r\n        <mail>emily.smith@example.com</mail>\r\n        <mail>emily.smith@company.com</mail>\r\n        <tel>03 01 03 02 03</tel>\r\n        <tel>05 05 05 05 05</tel>\r\n    </client>\r\n    <team>\r\n        <member>\r\n            <person gender=\"Miss\" lastname=\"Martin\">Sophie</person>\r\n            <mail>sophie.martin@example.com</mail>\r\n            <function>Designer</function>\r\n        </member>\r\n        <member>\r\n            <person gender=\"Mr\" lastname=\"Lefebvre\">Pierre</person>\r\n            <mail>pierre.lefebvre@example.com</mail>\r\n            <function>Developer</function>\r\n        </member>\r\n        <member>\r\n            <person gender=\"Mrs\" lastname=\"Gagnon\">Isabelle</person>\r\n            <mail>isabelle.gagnon@example.com</mail>\r\n            <function>Tester</function>\r\n        </member>\r\n    </team>\r\n    <features>\r\n        <feature name=\"Fonctionnalité 1\" section=\"1\" number=\"1\">\r\n            <description>Description de la fonctionnalité 1</description>\r\n            <priority>1</priority>\r\n            <delivery>2023-06-01T09:00:00</delivery>\r\n            <comment>Commentaire pour la fonctionnalité 1</comment>\r\n        </feature>\r\n        <feature name=\"Fonctionnalité 2\" section=\"2\" number=\"3\">\r\n            <description>Description de la fonctionnalité 2</description>\r\n            <priority>2</priority>\r\n            <delivery>2023-06-03T14:30:00</delivery>\r\n            <comment>Commentaire pour la fonctionnalité 2</comment>\r\n        </feature>\r\n        <feature name=\"Fonctionnalité 3\" section=\"3\" number=\"2\">\r\n            <description>Description de la fonctionnalité 3</description>\r\n            <priority>3</priority>\r\n            <delivery>2023-06-05T11:45:00</delivery>\r\n            <comment>Commentaire pour la fonctionnalité 3</comment>\r\n        </feature>\r\n    </features>\r\n</stb:stb>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/stb23/insert",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6 - /stb23/resume/xml",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stb23/resume/xml",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"resume",
+						"xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7 - /stb23/resume",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stb23/resume",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"resume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8 - /stb23/xml/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stb23/xml/10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"xml",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9 - /stb23/html/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stb23/html/10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"html",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10 - /stb23/delete/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stb23/delete/10",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"delete",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11 - /stb23/html/{id} ( will return error )",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/stb23/html/11",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stb23",
+						"html",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://stb23-merre-vallee-rest-service.cleverapps.io",
+			"type": "string"
+		}
+	]
+}

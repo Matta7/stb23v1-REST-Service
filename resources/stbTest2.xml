@@ -1,13 +1,14 @@
 <stb:stb xmlns:stb="http://univrouen.fr/stb23">
     <version>1000.00</version>
-    <title>Projet Beta</title>
+    <title>Projet Gamma</title>
     <date>2008-09-29T03:49:45</date>
-    <description>Description du projet Beta</description>
+    <description>Description du projet Gamma</description>
     <client>
         <entity>Entreprise XYZ</entity>
         <person gender="Mr" lastname="Johnson">John</person>
-        <tel>02 12 12 12 12</tel>
-        <tel>03 12 12 12 12</tel>
+        <tel>03 01 03 02 03</tel>
+        <tel>05 05 05 05 05</tel>
+        <mail>sophie.mauger@example.com</mail>
     </client>
     <team>
         <member>
