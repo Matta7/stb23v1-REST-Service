@@ -18,11 +18,6 @@ public class STBXMLService {
 
     public String getList() {
         Iterable<STB> stbList = stbRepository.findAll();
-        /*STBs stbs = new STBs();
-        for(STB stb : stbList) {
-            stbs.addSTB(stb);
-        }
-        return stbs;*/
 
         StringBuilder result = new StringBuilder("<result>\n");
         for (STB stb : stbList) {
@@ -40,10 +35,5 @@ public class STBXMLService {
 
     public STB getById(String id) {
         return stbRepository.findById(id).orElse(null);
-        /*try {
-
-        } catch (Exception e) {
-            return StatusGenerator.generateStatusXML(id, "ERROR");
-        }*/
     }
 }
