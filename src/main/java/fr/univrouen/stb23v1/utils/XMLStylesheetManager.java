@@ -45,6 +45,7 @@ public class XMLStylesheetManager {
         res = res.replaceFirst("<html>", "<!DOCTYPE html>\n<html>");
         res = res.replaceFirst("<head>", "<head>\n<title>" + stb.getTitle() + "</title>");
 
+        return res;
     }
 
     public static String getStbResumeHtml(String xml) throws TransformerException, JAXBException, IOException {
