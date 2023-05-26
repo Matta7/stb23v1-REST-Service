@@ -1,0 +1,36 @@
+<stb:stb xmlns:stb="http://univrouen.fr/stb23">
+  <version>3.2</version>
+  <title>Oui</title>
+
+  <date>2008-09-29T03:49:45</date>
+  <description>string</description>
+  <client>
+    <entity>string</entity>
+    <person gender="Mrs" lastname="string">string</person>
+    <mail>a.a@a.com</mail>
+  </client>
+  <team>
+    <!--2 to 8 repetitions:-->
+    <member>
+      <person gender="Miss" lastname="string">string</person>
+      <mail>a.a@a.com</mail>
+      <!--1 or more repetitions:-->
+      <function>string</function>
+    </member>
+    <member>
+      <person gender="Mr" lastname="string">string</person>
+      <mail>a.a@a.com</mail>
+      <!--1 or more repetitions:-->
+      <function>string</function>
+    </member>
+  </team>
+  <features>
+    <!--1 or more repetitions:-->
+    <feature name="string" section="3" number="3">
+      <description>string</description>
+      <priority>3</priority>
+      <delivery>2006-08-19T19:27:14+02:00</delivery>
+      <comment>string</comment>
+    </feature>
+  </features>
+</stb:stb>

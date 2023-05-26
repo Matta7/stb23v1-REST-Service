@@ -37,13 +37,14 @@ public class XMLStylesheetManager {
 
         String res = sw.toString();
 
-        // On récupère la première ligne du résultat pour la supprimer
+        // On supprime le xmlns, peu importe le contenu de xmlns
+        // dans la balise HTML du résultat et on ajoute un DOCTYPE au début ainsi qu'une balise 
         // <title> dans la balise head pour le nom de la STB
 
-        res = res.replaceFirst("<html xmlns:stb=\"http://univrouen.fr/stb23\">", "<!DOCTYPE html>\n<html lang=\"fr\">");
-        res = res.replaceFirst("<head>", "<head>\n\t\t<title>" + stb.getTitle() + "</title>");
+        res = res.replaceFirst("xmlns=\".*\"", "");
+        res = res.replaceFirst("<html>", "<!DOCTYPE html>\n<html>");
+        res = res.replaceFirst("<head>", "<head>\n<title>" + stb.getTitle() + "</title>");
 
-        return res;
     }
 
     public static String getStbResumeHtml(String xml) throws TransformerException, JAXBException, IOException {
