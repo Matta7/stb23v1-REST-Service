@@ -4,8 +4,6 @@ import org.springframework.web.client.RestTemplate;
 
 public class HomeRequest {
 
-
-
     public String homePageRequest() {
         String uri = APIConstant.baseURL + "/";
 

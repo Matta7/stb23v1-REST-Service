@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController {
 
     @Autowired
-    HomeService homeService;
+    private HomeService homeService;
 
-    @RequestMapping(value = { "/" }, method = RequestMethod.GET)
+    @RequestMapping(
+            value = { "/" },
+            method = RequestMethod.GET
+    )
     public String index(Model model) {
         String htmlPage = homeService.getHomePage();
         model.addAttribute("page", htmlPage);
