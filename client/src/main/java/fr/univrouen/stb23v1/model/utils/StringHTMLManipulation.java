@@ -9,8 +9,8 @@ public class StringHTMLManipulation {
         nav.append("\t\t<ul>\n");
         nav.append("\t\t\t<li><a href=\"/\">Accueil</a></li>");
         nav.append("\t\t\t<li><a href=\"/help\">Aide</a></li>");
-        nav.append("\t\t\t<li><a href=\"stb23/list\">Liste des STBs</a></li>");
-        nav.append("\t\t\t<li><a href=\"stb23/insert\">Ajouter une STB</a></li>");
+        nav.append("\t\t\t<li><a href=\"/stb23/list\">Liste des STBs</a></li>");
+        nav.append("\t\t\t<li><a href=\"/stb23/insert\">Ajouter une STB</a></li>");
         nav.append("\t\t</ul>\n");
         nav.append("\t</nav>\n");
 

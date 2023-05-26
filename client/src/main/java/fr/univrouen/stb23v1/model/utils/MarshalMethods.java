@@ -1,17 +1,13 @@
 package fr.univrouen.stb23v1.model.utils;
 
+import fr.univrouen.stb23v1.model.entities.ResultRequest;
 import fr.univrouen.stb23v1.model.entities.ResultSTBList;
 import fr.univrouen.stb23v1.model.entities.STB;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
-import org.springframework.core.io.DefaultResourceLoader;
-import org.xml.sax.SAXException;
 
-import javax.xml.XMLConstants;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
 import java.io.*;
 
 public class MarshalMethods {
@@ -40,6 +36,21 @@ public class MarshalMethods {
             StringReader reader = new StringReader(xml);
             ResultSTBList resultSTBList = (ResultSTBList) unmarshaller.unmarshal(reader);
             return resultSTBList;
+
+        } catch (JAXBException e) {
+            return null;
+        }
+    }
+
+    public static ResultRequest deserializeXmlStatus(String xml) {
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(ResultRequest.class);
+            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+
+
+            StringReader reader = new StringReader(xml);
+            ResultRequest resultRequest = (ResultRequest) unmarshaller.unmarshal(reader);
+            return resultRequest;
 
         } catch (JAXBException e) {
             return null;
